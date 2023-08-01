@@ -1,18 +1,16 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Makes it mobile-friendly -->
-        <link rel='stylesheet' type='text/css' href='style.css'>
-    </head>
-    <body onload="startGame()">
+
+<head>
+    <link rel='stylesheet' type='text/css' href='style.css'>
+</head>
+
+<body onload="startGame()">
+    <div class="container">
         <div class="center column">
-            <div class="row">
-                <div class="topleft">
-                    <h2 id="notification">SET</h2>
-                </div>
-                <div class="topright">
-                    <h1 id="timer">00:00:00</h1>
-                </div>
+            <div class="header-section">
+                <h1 id="timer">00:00:00</h1>
+                <h2 id="notification">SET</h2>
             </div>
             <table id="cardsOnTable">
                 <tr id="r0">
@@ -40,6 +38,8 @@
                 <h2 id="deckCount"></h2>
             </div>
         </div>
-    </body>
+    </div>
     <script src="set.js"></script>
-</html>
+</body>
+
+</html

@@ -33,7 +33,7 @@ function startGame() {
     checkSetsOnBoard();
     final_time = null;
     start_time = new Date().getTime();
-    timer.style.color = "black";
+    timer.style.color = "#444";
     timer.innerHTML = "00:00:00";
 }
 
@@ -80,7 +80,7 @@ function shuffleDeck() {
 }
 
 function selectCard(elmnt, loc) {
-    notification.style.color = "black";
+    notification.style.color = "#444";
     notification.innerHTML = `Sets on Board: ${sets_on_table}`;
     // Check if loc already in selected array (-1 if not)
     //notification.style.color = "#bfbfbf";
@@ -89,11 +89,11 @@ function selectCard(elmnt, loc) {
     // Deselect card
     if (select >= 0) {
         selected.splice(select, 1);
-        elmnt.style.border = "5px solid #bfbfbf";
+        elmnt.style.border = "5px solid #eeeeee";
     // Select card
     } else if (select < 0 && selected.length < 3) {
         selected.push(loc); 
-        elmnt.style.border = "5px solid black";
+        elmnt.style.border = "5px solid #444";
         if (selected.length == 3) {
             checkSelectedSet();
         } 
@@ -133,7 +133,7 @@ function replaceCards(cardIdxs) {
             }
         }
         sets_on_table = countSets(on_table);
-        notification.style.color = "black";
+        notification.style.color = "#444";
         notification.innerHTML = `Sets on Board: ${sets_on_table}`;
     }
     updateDeckCount();
@@ -165,34 +165,14 @@ function isSet(features) {
 }
 
 function checkSelectedSet() {
-    document.getElementById("prevColumn").style.visibility = "visible";
-    var stat = document.getElementById("setStatus")
+    var stat = document.getElementById("setStatus");
 
-    // Selected contains indicies of the selected cards on the table,
-    // possible_set maps these indicies to the actual card numbers
+    // Selected contains indices of the selected cards on the table,
+    // possible_set maps these indices to the actual card numbers
     var possible_set = selected.map(x => on_table[x]);
-    for (var idx in possible_set) {
-        var image_tag = '<img src="cards/'.concat(possible_set[idx].toString(), '.png">');
-        document.getElementById("ps".concat(idx.toString())).innerHTML = image_tag;
-    }
-    const names = {0:"color", 1:"number", 2:"shape", 3:"shading"};
-    reasons = document.getElementById("reasons");
-    reasons.innerHTML = "";
     const features = getFeatures(possible_set);
     if (isSet(features)) {
-        stat.innerHTML = "Is a SET";
-        stat.style.color = "green";
         replaceCards(selected);
-    } else {
-        stat.innerHTML = "Is not a SET";
-        stat.style.color = "red";
-        for (var i = 0; i < 4; i++) {
-            if (features[i] > 0) {
-                console.log(i)
-                reasons.innerHTML += "<li>2 have same ".concat(names[i], "</li>");
-            }
-        }
-        checkRemaining();
     }
 }
 
@@ -218,7 +198,7 @@ function checkSetsOnBoard() {
         notification.style.color = "blue";
         notification.innerHTML = `12 new cards dealt`;
     } else {
-        notification.style.color = "black";
+        notification.style.color = "#444";
         notification.innerHTML = `Sets on Board: ${sets_on_table}`;
     }
     checkRemaining();
