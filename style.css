@@ -4,6 +4,7 @@
 
 body {
     background-color: #bfbfbf;
+    font-size: 16px; /* Set base font size */
 }
 
 h1, h2, h3 {
@@ -15,58 +16,45 @@ table {
     margin-left: auto;
     margin-right: auto;
     border-spacing: 15px;
+    width: 100%; /* Set table width to 100% */
 }
 
 td {
     background-color: white;
     border: 5px solid #bfbfbf;
-}
-
-td {
     height: 80px;
     width: 135px;
     vertical-align: center;
     text-align: center;
+    border-radius: 10px; /* Rounded corners */
 }
 
 ul {
     color: red;
     display: table;
     margin: 0 auto;
+    padding: 0; /* Remove default padding */
 }
 
 .row {
     display: flex;
+    flex-direction: column; /* Stack elements vertically for mobile */
 }
 
 .column {
     padding: 10px;
 }
 
-.left {
-    flex:  25%;
-}
-
 .center {
-    flex: 50%;
-}
-
-.right {
-    flex: 25%;
-    visibility: hidden;
+    width: 100%; /* Full width for the center column */
 }
 
 .bottom {
     text-align: center;
 }
 
-.topright {
-    flex: 40%;
-    text-align: center;
-}
-
-.topleft {
-    flex: 60%;
+.topright, .topleft {
+    width: 100%;
     text-align: center;
 }
 
@@ -83,6 +71,30 @@ ul {
     font-family: "Lucida Console", Monaco, monospace;
 }
 
-#r4 {
-    visibility: hidden;
+/* Media queries for mobile screens */
+@media (max-width: 767px) {
+    table {
+        max-width: 90vw; /* This is 90% of the viewport's width */
+    }
+    tr {
+        height: 30vw; /* Assuming the card's width is roughly 30% of the viewport's width */
+    }
+    td {
+        transform: rotate(90deg);
+        transform-origin: center;  /* Ensures the rotation is around the center */
+    }
 }
+
+/* Media queries for larger screens */
+@media (min-width: 768px) {
+    .row {
+        flex-direction: row; /* Horizontally aligned for larger screens */
+    }
+    .topright {
+        flex: 40%;
+    }
+    .topleft {
+        flex: 60%;
+    }
+}
+
