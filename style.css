@@ -75,16 +75,14 @@ ul {
 }
 
 /* Mobile specific styles */
-@media (max-width: 768px) {
+@media only screen and (max-device-width: 1024px) {
     td {
         transform: rotate(90deg);
         transform-origin: center;
     }
 }
 
-/* Desktop specific styles */
-@media (min-width: 769px) {
-    .container {
-        margin: 0 auto;
-    }
+/* Adjustments for landscape mode */
+@media only screen and (max-device-width: 1024px) and (orientation: landscape) {
+    /* Add any landscape-specific adjustments here */
 }
