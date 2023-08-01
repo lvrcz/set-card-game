@@ -63,7 +63,7 @@ function initializeDeck() {
     var notification = document.getElementById("notification");
     notification.setAttribute("onClick", "");
     notification.innerHTML = "SET";
-    notification.style.color = "#bfbfbf";
+    notification.style.color = "#eeeeee";
     for (var i = 0; i < 81; i++) {
         deck.push(i);
     }
@@ -83,7 +83,7 @@ function selectCard(elmnt, loc) {
     notification.style.color = "#444";
     notification.innerHTML = `Sets on Board: ${sets_on_table}`;
     // Check if loc already in selected array (-1 if not)
-    //notification.style.color = "#bfbfbf";
+    //notification.style.color = "#eeeeee";
     var select = selected.indexOf(loc);
 
     // Deselect card
@@ -109,7 +109,7 @@ function replaceCards(cardIdxs) {
             var cell = document.getElementById("cell".concat(cardIdxs[i].toString()));
             on_table.splice(cardIdxs[i], 1, new_card) 
             cell.innerHTML = image_tag;
-            cell.style.border = "5px solid #bfbfbf";
+            cell.style.border = "5px solid #eeeeee";
         }
         checkSetsOnBoard();
     } else {
@@ -117,7 +117,7 @@ function replaceCards(cardIdxs) {
             var cellid = "cell".concat(cardIdxs[i].toString); 
             var cell = document.getElementById("cell".concat(cardIdxs[i].toString()));
             on_table.splice(cardIdxs[i], 1, -1) 
-            cell.style.border = "5px solid #bfbfbf";
+            cell.style.border = "5px solid #eeeeee";
         }
         for (var i = on_table.length-1; i >= 0; i--) {
             if (on_table[i] == -1) {
