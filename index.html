@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' href='style.css'>
+</head>
+
+<body onload="startGame()">
+    <div class="container">
+        <div class="center column">
+            <div class="header-section">
+                <h1 id="timer">00:00:00</h1>
+                <h2 id="notification">SET</h2>
+            </div>
+            <table id="cardsOnTable">
+                <tr id="r0">
+                    <td id="cell0" onclick="selectCard(this, 0)"></td>
+                    <td id="cell1" onclick="selectCard(this, 1)"></td>
+                    <td id="cell2" onclick="selectCard(this, 2)"></td>
+                </tr>
+                <tr id="r1">
+                    <td id="cell3" onclick="selectCard(this, 3)"></td>
+                    <td id="cell4" onclick="selectCard(this, 4)"></td>
+                    <td id="cell5" onclick="selectCard(this, 5)"></td>
+                </tr>
+                <tr id="r2">
+                    <td id="cell6" onclick="selectCard(this, 6)"></td>
+                    <td id="cell7" onclick="selectCard(this, 7)"></td>
+                    <td id="cell8" onclick="selectCard(this, 8)"></td>
+                </tr>
+                <tr id="r3">
+                    <td id="cell9" onclick="selectCard(this, 9)"></td>
+                    <td id="cell10" onclick="selectCard(this, 10)"></td>
+                    <td id="cell11" onclick="selectCard(this, 11)"></td>
+                </tr>
+            </table>
+            <div class="bottom">
+                <h2 id="deckCount"></h2>
+            </div>
+        </div>
+    </div>
+    <script src="set.js"></script>
+</body>
+
+</html

@@ -1,0 +1,88 @@
+* { 
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #bfbfbf;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 15px;
+}
+
+td {
+    background-color: white;
+    border: 5px solid #bfbfbf;
+}
+
+td {
+    height: 80px;
+    width: 135px;
+    vertical-align: center;
+    text-align: center;
+}
+
+ul {
+    color: red;
+    display: table;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    padding: 10px;
+}
+
+.left {
+    flex:  25%;
+}
+
+.center {
+    flex: 50%;
+}
+
+.right {
+    flex: 25%;
+    visibility: hidden;
+}
+
+.bottom {
+    text-align: center;
+}
+
+.topright {
+    flex: 40%;
+    text-align: center;
+}
+
+.topleft {
+    flex: 60%;
+    text-align: center;
+}
+
+#notification {
+    color: #bfbfbf;
+}
+
+#deckCount {
+    padding: 0;
+    margin: 0;
+}
+
+#timer {
+    font-family: "Lucida Console", Monaco, monospace;
+}
+
+#r4 {
+    visibility: hidden;
+}

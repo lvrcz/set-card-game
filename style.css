@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #EEEEEE;
+    font-family: 'Times New Roman', Times, serif;
+    color: #444;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 50%; /* For the half screen requirement on desktop */
+    margin: 0 auto;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 22px;
+}
+
+td {
+    background-color: white;
+    border: 5px solid #EEEEEE;
+    height: 80px;
+    width: 135px;
+    vertical-align: center;
+    text-align: center;
+    border-radius: 15px; /* Round corners */
+}
+
+ul {
+    color: red;
+    display: table;
+    margin: 0 auto;
+}
+
+.header-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.column {
+    padding: 10px;
+}
+
+.bottom {
+    text-align: center;
+}
+
+
+#notification {
+    color: #bfbfbf;
+}
+
+#deckCount {
+    padding: 0;
+    margin: 0;
+}
+
+#timer {
+    font-family: 'Times New Roman', Times, serif;
+    color: #444;
+}
+
+/* Mobile specific styles */
+@media only screen and (max-device-width: 1024px) {
+    td {
+        transform: rotate(90deg);
+        transform-origin: center;
+    }
+}
+
+/* Adjustments for landscape mode */
+@media only screen and (max-device-width: 1024px) and (orientation: landscape) {
+    /* Add any landscape-specific adjustments here */
+}
